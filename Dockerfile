@@ -1,6 +1,7 @@
 FROM registry.fedoraproject.org/fedora:latest
 
 RUN set -x \
+    && rm -f /etc/yum.repos.d/*modular.repo
     && dnf -y install /usr/bin/flit python3-orderedset python3-openstacksdk python3-yaml
 
 COPY . /sgmanager
